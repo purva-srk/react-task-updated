@@ -35,6 +35,7 @@ const Temperature = () => {
     } else {
       setSelectValue1("Celsius");
     }
+    console.log("hi");
   };
 
   return (
