@@ -38,14 +38,14 @@ const Temperature = () => {
     if (event.target.value === "Fahrenheit") {
       setSelectValue2("Celsius");
       setTemp({
-        c: ((temp.f - 32) * 5) / 9,
+        c: ((temp.c - 32) * 5) / 9,
         f: temp.c,
       });
     } else {
       setSelectValue2("Fahrenheit");
       setTemp({
         c: temp.f,
-        f: (temp.c * 9) / 5 + 32,
+        f: (temp.f * 9) / 5 + 32,
       });
     }
   };
@@ -54,8 +54,16 @@ const Temperature = () => {
     setSelectValue2(event.target.value);
     if (event.target.value === "Celsius") {
       setSelectValue1("Fahrenheit");
+      setTemp({
+        c: temp.f,
+        f: (temp.f * 9) / 5 + 32,
+      });
     } else {
       setSelectValue1("Celsius");
+      setTemp({
+        c: ((temp.c - 32) * 5) / 9,
+        f: temp.c,
+      });
     }
   };
 
