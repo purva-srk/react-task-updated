@@ -13,9 +13,11 @@ const CloneCounter = () => {
 
   return (
     <div>
+      <p>There are {count + 1} counters currently active</p>
       <button className="clone" onClick={handleClick}>
         Add New
       </button>
+      <br />
       {arr.map((item) => {
         return <CounterApp />;
       })}

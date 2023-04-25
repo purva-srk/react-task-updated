@@ -21,7 +21,7 @@ const ItemPrice = () => {
       <label className="label_celsius">Quantity </label>
       <input className="celsius" type="number" onChange={handleQuantity} />
       <p>
-        The total cost of {quantity} items is {price * quantity}
+        The total cost of {quantity} items is {(price * quantity).toFixed(2)}
       </p>
     </div>
   );

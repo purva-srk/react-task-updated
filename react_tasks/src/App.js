@@ -23,8 +23,10 @@ function App() {
             <Temperature />
           </Route>
           <Route path="/counter-clone">
-            <CounterApp />
-            <CloneCounter />
+            <span>
+              <CounterApp />
+              <CloneCounter />
+            </span>
           </Route>
         </Switch>
       </div>

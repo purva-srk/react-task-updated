@@ -172,13 +172,11 @@ button.counter {
   transition: 0.3s;
   background-color: rgb(54, 56, 83);
   color: white;
-  width: 400px;
-  height: 150px;
+  margin-top: 10px;
+  margin-right: 20px;
   padding: 25px 16px;
-  margin-left: 425px;
-  margin-bottom: 60px;
-  margin-top: 40px;
   border-radius: 15px;
+  display: inline-block;
 }
 
 .card:hover {

@@ -2,18 +2,10 @@ import { useState } from "react";
 
 const ToggleButton = () => {
   const [data, setData] = useState();
-  const [showButton, setShowButton] = useState("true");
+  const [button, setButton] = useState(true);
 
   const nameChangeHandler = (event) => {
     setData(event.target.value);
-  };
-
-  const handleShowButton = () => {
-    setShowButton("true");
-  };
-
-  const handleHideButton = () => {
-    setShowButton("false");
   };
 
   return (
@@ -25,11 +17,8 @@ const ToggleButton = () => {
         value={data}
         onChange={nameChangeHandler}
       />
-      {showButton === "true" && <p>{data}</p>}
-      {showButton === "false" && null}
-      <br />
 
-      <button
+      {/* <button
         className="toggleButton"
         disabled={!data}
         onClick={handleShowButton}
@@ -40,6 +29,29 @@ const ToggleButton = () => {
         className="toggleButton"
         disabled={!data}
         onClick={handleHideButton}
+      >
+        Hide
+      </button> */}
+
+      {button === true && <p>{data}</p>}
+      {button === false && null}
+      <br />
+
+      <button
+        className="toggleButton"
+        onClick={() => {
+          setButton(true);
+        }}
+        disabled={!data}
+      >
+        Show
+      </button>
+      <button
+        className="toggleButton"
+        onClick={() => {
+          setButton(false);
+        }}
+        disabled={!data}
       >
         Hide
       </button>
