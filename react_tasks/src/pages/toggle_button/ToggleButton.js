@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "antd";
 
 const ToggleButton = () => {
   const [data, setData] = useState();
@@ -9,7 +10,7 @@ const ToggleButton = () => {
   };
 
   return (
-    <div>
+    <div className="toggle">
       <label className="toggleLabel">Enter Name:</label>
       <input
         className="toggleInput"
@@ -32,29 +33,36 @@ const ToggleButton = () => {
       >
         Hide
       </button> */}
-
-      {button === true && <p>{data}</p>}
-      {button === false && null}
+      <div className="data">
+        {button === true && <p>{data}</p>}
+        {button === false && null}
+      </div>
       <br />
 
-      <button
-        className="toggleButton"
-        onClick={() => {
-          setButton(true);
-        }}
-        disabled={!data}
-      >
-        Show
-      </button>
-      <button
-        className="toggleButton"
-        onClick={() => {
-          setButton(false);
-        }}
-        disabled={!data}
-      >
-        Hide
-      </button>
+      <span>
+        <Button
+          type="primary"
+          className="buttonShow"
+          size="large"
+          onClick={() => {
+            setButton(true);
+          }}
+          disabled={!data}
+        >
+          Show
+        </Button>
+        <Button
+          type="primary"
+          className="buttonHide"
+          size="large"
+          onClick={() => {
+            setButton(false);
+          }}
+          disabled={!data}
+        >
+          Hide
+        </Button>
+      </span>
     </div>
   );
 };

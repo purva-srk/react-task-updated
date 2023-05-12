@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Card } from "antd";
 
 const Temperature = () => {
   const [temp, setTemp] = useState({ c: "", f: "" });
@@ -68,8 +69,7 @@ const Temperature = () => {
   };
 
   return (
-    <div className="card">
-      <h2>Temperature Converter</h2>
+    <Card title="Temperature Converter" className="card_temperature" hoverable>
       <div>
         {selectValue1 === "Celsius" ? (
           <input
@@ -115,7 +115,7 @@ const Temperature = () => {
           <option value="Fahrenheit">Fahrenheit</option>
         </select>
       </div>
-    </div>
+    </Card>
   );
 };
 

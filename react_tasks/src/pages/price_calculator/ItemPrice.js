@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Card } from "antd";
 
 const ItemPrice = () => {
   const [price, setPrice] = useState("");
@@ -13,16 +14,17 @@ const ItemPrice = () => {
   };
 
   return (
-    <div className="card_price">
-      <h2>Price Calculator</h2>
-      <label className="label_celsius">Price </label>
-      <input className="celsius" type="number" onChange={handlePrice} />
-      {" X "}
-      <label className="label_celsius">Quantity </label>
-      <input className="celsius" type="number" onChange={handleQuantity} />
-      <p>
-        The total cost of {quantity} items is {(price * quantity).toFixed(2)}
-      </p>
+    <div>
+      <Card title="Price Calculator" className="card_price" hoverable>
+        <label>Price </label>
+        <input className="price" type="number" onChange={handlePrice} />
+        {" X "}
+        <label>Quantity </label>
+        <input className="price" type="number" onChange={handleQuantity} />
+        <p>
+          The total cost of {quantity} items is {(price * quantity).toFixed(2)}
+        </p>
+      </Card>
     </div>
   );
 };

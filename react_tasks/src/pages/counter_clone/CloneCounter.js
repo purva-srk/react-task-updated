@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "antd";
 
 import CounterApp from "./CounterApp";
 
@@ -13,14 +14,22 @@ const CloneCounter = () => {
 
   return (
     <div>
-      <p>There are {count + 1} counters currently active</p>
-      <button className="clone" onClick={handleClick}>
+      <p className="clone-counter">
+        There are {count + 1} counters currently active
+      </p>
+      <Button
+        type="primary"
+        className="clone"
+        size="large"
+        onClick={handleClick}
+      >
         Add New
-      </button>
-      <br />
-      {arr.map((item) => {
-        return <CounterApp />;
-      })}
+      </Button>
+      <div className="flex-div">
+        {arr.map((item) => {
+          return <CounterApp />;
+        })}
+      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Card } from "antd";
 
 const CounterApp = () => {
   const [number, setNumber] = useState(0);
@@ -16,20 +17,21 @@ const CounterApp = () => {
   };
 
   return (
-    <div className="card_counter">
-      <h2>Counter App</h2>
-      <button className="counter" onClick={handleDecrement}>
-        -
-      </button>
-      <input
-        className="counter_input"
-        type="number"
-        value={number}
-        onChange={handleNumberInput}
-      />
-      <button className="counter" onClick={handleIncrement}>
-        +
-      </button>
+    <div>
+      <Card title="Counter App" className="card_counter" hoverable>
+        <button className="counter" onClick={handleDecrement}>
+          -
+        </button>
+        <input
+          className="counter_input"
+          type="number"
+          value={number}
+          onChange={handleNumberInput}
+        />
+        <button className="counter" onClick={handleIncrement}>
+          +
+        </button>
+      </Card>
     </div>
   );
 };

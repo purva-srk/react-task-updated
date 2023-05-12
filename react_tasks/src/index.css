@@ -22,11 +22,6 @@ code {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: white;
-}
-
-.links a {
-  background-color: white;
-  float: left;
   border: none;
   outline: none;
   cursor: pointer;
@@ -37,46 +32,47 @@ code {
   font-weight: bold;
 }
 
-.links a:hover {
-  background-color: rgb(146, 146, 151);
-}
-
-.links a:active {
-  background-color: rgb(210, 210, 224);
-}
-
 /* Toggle Button Styling */
 
 .toggleInput {
   width: 20%;
   padding: 12px 20px;
   margin-top: 25px;
+  margin-left: 475px;
   border-radius: 4px;
 }
 
 .toggleLabel {
   margin-top: 35px;
+  margin-left: 575px;
   color: #150c06;
   font-weight: bold;
   display: block;
 }
 
-.toggleButton {
-  background-color: #04aa6d;
+.buttonShow {
   color: white;
-  padding: 12px 25px;
   margin: 4px 2px;
   cursor: pointer;
+  width: 100px;
+  margin-left: 522px;
 }
 
-.toggleButton:hover {
-  background-color: white;
-  color: black;
+.buttonHide {
+  color: white;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100px;
+  margin-right: 500px;
+}
+
+.data {
+  text-align: center;
 }
 
 /* Price Calculator Styling */
 
-.celsius {
+.price {
   width: 100px;
   padding: 12px 20px;
   border-radius: 4px;
@@ -85,28 +81,19 @@ code {
 }
 
 .card_price {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
-  transition: 0.3s;
-  background-color: rgb(54, 56, 83);
-  color: white;
-  width: 500px;
-  height: 200px;
-  padding: 25px 16px;
   margin-left: 370px;
   margin-bottom: 60px;
   margin-top: 40px;
-  border-radius: 15px;
-}
-
-.card_price:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  width: 500px;
+  height: 200px;
+  background-color: #95a5b7;
+  color: black;
 }
 
 /* Temperature Converter Styling */
 
 .temperature {
-  width: 15%;
+  width: 120px;
   padding: 12px 20px;
   margin-top: 25px;
   margin-left: 10px;
@@ -118,28 +105,20 @@ select {
   padding: 8px 15px;
   margin-left: 10px;
   margin-right: 10px;
-  width: 18%;
+  width: 150px;
   font-family: inherit;
   font-size: inherit;
   cursor: inherit;
   line-height: inherit;
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  background-color: rgb(54, 56, 83);
-  color: white;
-  width: 850px;
-  height: 180px;
-  padding: 25px 16px;
+.card_temperature {
   margin-top: 50px;
-  margin-left: 190px;
-  border-radius: 15px;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 250px;
+  width: 750px;
+  height: 180px;
+  background-color: #95a5b7;
+  color: white;
 }
 
 /* Counter Styling */
@@ -168,24 +147,35 @@ button.counter {
 }
 
 .card_counter {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  background-color: rgb(54, 56, 83);
-  color: white;
   margin-top: 10px;
   margin-right: 20px;
-  padding: 25px 16px;
-  border-radius: 15px;
-  display: inline-block;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-button.clone {
-  background-color: rgb(54, 56, 83);
+  margin-left: 20px;
+  width: 400px;
+  height: 150px;
+  background-color: #95a5b7;
   color: white;
-  padding: 10px 25px;
-  border-radius: 35px;
+}
+
+.flex-div {
+  display: flex;
+}
+
+.clone-counter {
+  margin-left: 90px;
+}
+
+Button.clone {
+  background-color: #95a5b7;
+  color: white;
+  margin-left: 152px;
+}
+
+/* Antd Component Styling */
+
+.antd {
+  display: flex;
+}
+
+.antdButton {
+  margin-left: 580px;
 }
