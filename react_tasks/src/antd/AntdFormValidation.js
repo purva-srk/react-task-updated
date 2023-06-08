@@ -3,7 +3,7 @@ import { Form, Button, Checkbox, DatePicker, Input, Select } from "antd";
 const AntdFormValidation = () => {
   return (
     <div>
-      <Form autoComplete="off" labelCol={{ span: 10 }} wrapperCol={{ span: 5 }}>
+      <Form autoComplete="off" labelCol={{ span: 5 }} wrapperCol={{ span: 3 }}>
         <Form.Item
           name="fullName"
           label="Full Name"
@@ -117,7 +117,7 @@ const AntdFormValidation = () => {
 
         <Form.Item
           name="agreement"
-          style={{ width: 1500, marginLeft: 460 }}
+          style={{ width: 1500, marginLeft: 400 }}
           valuePropName="checked"
           rules={[
             {
@@ -138,7 +138,7 @@ const AntdFormValidation = () => {
 
         <Form.Item>
           <Button
-            style={{ marginLeft: 390, width: 390 }}
+            style={{ marginLeft: 400, width: 220 }}
             block
             type="primary"
             htmlType="submit"

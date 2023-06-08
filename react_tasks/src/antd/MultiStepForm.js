@@ -43,7 +43,7 @@ const MultiStepForm = () => {
   return (
     <div>
       <Steps
-        style={{ padding: "100px 50px" }}
+        style={{ padding: "100px 120px", width: "1000px" }}
         onChange={setCurrentStep}
         current={currentStep}
       >
@@ -106,9 +106,7 @@ function LoginForm({ onFinish, initialValues }) {
         <Button
           type="primary"
           htmlType="submit"
-          style={{
-            marginLeft: 600,
-          }}
+          style={{ marginLeft: "470px" }}
         >
           Continue
         </Button>
@@ -154,9 +152,7 @@ function ProfileForm({ onFinish, initialValues }) {
         <Button
           type="primary"
           htmlType="submit"
-          style={{
-            marginLeft: 600,
-          }}
+          style={{ marginLeft: "470px" }}
         >
           Continue
         </Button>
@@ -168,13 +164,8 @@ function ProfileForm({ onFinish, initialValues }) {
 function Finish() {
   return (
     <div>
-      <h1 style={{ marginLeft: 540 }}>You are all set!</h1>
-      <Button
-        type="primary"
-        style={{
-          marginLeft: 600,
-        }}
-      >
+      <h1 style={{ marginLeft: "410px" }}>You are all set!</h1>
+      <Button type="primary" style={{ marginLeft: "470px" }}>
         Finish
       </Button>
     </div>

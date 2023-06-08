@@ -175,7 +175,3 @@ Button.clone {
 .antd {
   display: flex;
 }
-
-.antdButton {
-  margin-left: 580px;
-}

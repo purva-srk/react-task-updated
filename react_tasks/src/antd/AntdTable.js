@@ -102,12 +102,19 @@ const AntdTable = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        width: "80%",
+        padding: "50px 220px",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Button
         onClick={handleAddEmployee}
         type="primary"
         shape="round"
-        className="antdButton"
+        style={{ marginLeft: "270px", marginBottom: "20px" }}
       >
         Add new
       </Button>

@@ -4,10 +4,10 @@ const AntdFileUpload = () => {
   return (
     <div
       style={{
-        display: "flex",
         justifyContent: "center",
         alignItems: "center",
         height: "80",
+        padding: "150px 350px",
       }}
     >
       <Upload.Dragger
