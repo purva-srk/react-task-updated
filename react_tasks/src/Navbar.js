@@ -11,6 +11,7 @@ import ToggleButton from "./pages/toggle_button/ToggleButton";
 import AntdComponents from "./antd/AntdComponents";
 import AgGridMenu from "./agGrid/AgGridMenu";
 import CounterTesting from "./jest/CounterTesting";
+import TableSearch from "./table_search/TableSearch";
 
 const Navbar = () => {
   const { TabPane } = Tabs;
@@ -59,6 +60,9 @@ const Navbar = () => {
         </TabPane>
         <TabPane tab="Jest" key="tab7">
           <CounterTesting initialCount={0} />
+        </TabPane>
+        <TabPane tab="Table Search" key="tab8">
+          <TableSearch />
         </TabPane>
       </Tabs>
     </div>
