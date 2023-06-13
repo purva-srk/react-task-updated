@@ -2,30 +2,23 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
-import {
-  useState,
-  useRef,
-  useEffect,
-  useMemo,
-  useCallback,
-  Component,
-} from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 
-const PushComp = (p) => {
-  const onAt = useCallback(() => window.alert("Push"));
+const Year2000 = (p) => {
+  const onClickYear2000 = useCallback(() => window.alert("Year 2000"));
   return (
     <>
-      <button onClick={onAt}>Push</button>
+      <button onClick={onClickYear2000}>Year 2000</button>
       {p.value}
     </>
   );
 };
 
-const PullComp = (p) => {
-  const onAt = useCallback(() => window.alert("Push"));
+const Year2004 = (p) => {
+  const onClickYear2004 = useCallback(() => window.alert("Year 2004"));
   return (
     <>
-      <button onClick={onAt}>Push</button>
+      <button onClick={onClickYear2004}>Year 2004</button>
       {p.value}
     </>
   );
@@ -33,7 +26,7 @@ const PullComp = (p) => {
 
 const CellRenderer = () => {
   const [rowData, setRowData] = useState();
-  const [columnDefs, setColumnDefs] = useState([
+  const columnDefs = [
     { field: "athlete" },
     {
       field: "age",
@@ -49,10 +42,10 @@ const CellRenderer = () => {
       field: "year",
       cellRendererSelector: (p) => {
         if (p.value == 2000) {
-          return { component: PushComp, params: {} };
+          return { component: Year2000 };
         }
         if (p.value == 2004) {
-          return { component: PullComp };
+          return { component: Year2004 };
         }
       },
     },
@@ -62,7 +55,7 @@ const CellRenderer = () => {
     { field: "silver" },
     { field: "bronze" },
     { field: "total" },
-  ]);
+  ];
   const defaultColDef = useMemo(
     () => ({
       sortable: true,
@@ -78,13 +71,17 @@ const CellRenderer = () => {
   }, []);
 
   return (
-    <div className="ag-theme-alpine" style={{ height: 500, width: 900 }}>
-      <AgGridReact
-        rowData={rowData}
-        columnDefs={columnDefs}
-        defaultColDef={defaultColDef}
-        animateRows={true}
-      />
+    <div className="ag-theme-alpine">
+      <div className="cell-renderer">
+        <AgGridReact
+          rowData={rowData}
+          columnDefs={columnDefs}
+          defaultColDef={defaultColDef}
+          animateRows={true}
+          pagination={true}
+          paginationPageSize={10}
+        />
+      </div>
     </div>
   );
 };

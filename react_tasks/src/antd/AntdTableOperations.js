@@ -5,8 +5,6 @@ import { useState } from "react";
 const AntdTableOperations = () => {
   const [loading, setLoading] = useState(false);
   const [dataSource, setDataSource] = useState([]);
-  const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
 
   useEffect(() => {
     setLoading(true);
@@ -59,14 +57,7 @@ const AntdTableOperations = () => {
         loading={loading}
         columns={columns}
         dataSource={dataSource}
-        pagination={{
-          current: page,
-          pageSize: pageSize,
-          onChange: (page, pageSize) => {
-            setPage(page);
-            setPageSize(pageSize);
-          },
-        }}
+        pagination={{ pageSize: 5 }}
       ></Table>
     </div>
   );

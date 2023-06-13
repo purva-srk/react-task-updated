@@ -42,11 +42,7 @@ const MultiStepForm = () => {
 
   return (
     <div>
-      <Steps
-        style={{ padding: "100px 120px", width: "1000px" }}
-        onChange={setCurrentStep}
-        current={currentStep}
-      >
+      <Steps className="steps" onChange={setCurrentStep} current={currentStep}>
         <Steps.Step
           disabled={isStepDisabled(0)}
           title="Login"
@@ -103,11 +99,7 @@ function LoginForm({ onFinish, initialValues }) {
         >
           <Input.Password />
         </Form.Item>
-        <Button
-          type="primary"
-          htmlType="submit"
-          style={{ marginLeft: "470px" }}
-        >
+        <Button type="primary" htmlType="submit" className="multistep-button">
           Continue
         </Button>
       </Form>
@@ -149,11 +141,7 @@ function ProfileForm({ onFinish, initialValues }) {
         >
           <Input />
         </Form.Item>
-        <Button
-          type="primary"
-          htmlType="submit"
-          style={{ marginLeft: "470px" }}
-        >
+        <Button type="primary" htmlType="submit" className="multistep-button">
           Continue
         </Button>
       </Form>
@@ -164,10 +152,7 @@ function ProfileForm({ onFinish, initialValues }) {
 function Finish() {
   return (
     <div>
-      <h1 style={{ marginLeft: "410px" }}>You are all set!</h1>
-      <Button type="primary" style={{ marginLeft: "470px" }}>
-        Finish
-      </Button>
+      <h1 className="multistep-finish">You are all set!</h1>
     </div>
   );
 }

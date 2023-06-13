@@ -17,12 +17,13 @@ const CounterApp = () => {
   };
 
   return (
-    <div>
+    <div data-testid="counter-app">
       <Card title="Counter App" className="card_counter" hoverable>
         <button className="counter" onClick={handleDecrement}>
           -
         </button>
         <input
+          data-testid="counter-input"
           className="counter_input"
           type="number"
           value={number}

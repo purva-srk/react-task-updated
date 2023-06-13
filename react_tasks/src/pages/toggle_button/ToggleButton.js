@@ -13,26 +13,12 @@ const ToggleButton = () => {
     <div className="toggle">
       <label className="toggleLabel">Enter Name:</label>
       <input
+        data-testid="input"
         className="toggleInput"
         type="text"
         value={data}
         onChange={nameChangeHandler}
       />
-
-      {/* <button
-        className="toggleButton"
-        disabled={!data}
-        onClick={handleShowButton}
-      >
-        Show
-      </button>
-      <button
-        className="toggleButton"
-        disabled={!data}
-        onClick={handleHideButton}
-      >
-        Hide
-      </button> */}
       <div className="data">
         {button === true && <p>{data}</p>}
         {button === false && null}

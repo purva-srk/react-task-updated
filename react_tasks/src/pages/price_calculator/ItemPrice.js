@@ -17,10 +17,20 @@ const ItemPrice = () => {
     <div>
       <Card title="Price Calculator" className="card_price" hoverable>
         <label>Price </label>
-        <input className="price" type="number" onChange={handlePrice} />
+        <input
+          data-testid="price"
+          className="price"
+          type="number"
+          onChange={handlePrice}
+        />
         {" X "}
         <label>Quantity </label>
-        <input className="price" type="number" onChange={handleQuantity} />
+        <input
+          data-testid="quantity"
+          className="price"
+          type="number"
+          onChange={handleQuantity}
+        />
         <p>
           The total cost of {quantity} items is {(price * quantity).toFixed(2)}
         </p>

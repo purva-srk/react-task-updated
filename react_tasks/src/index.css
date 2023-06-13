@@ -172,6 +172,184 @@ Button.clone {
 
 /* Antd Component Styling */
 
-.antd {
+/* .antd {
+  display: flex;
+} */
+
+.antd-components {
+  display: flex;
+  flex-direction: row;
+}
+
+.upload-file {
+  width: 300px;
+  height: 100px;
+  margin-left: 350px;
+  padding: "200px 350px";
+}
+
+.upload-dragger {
+  padding: 50px;
+}
+
+.dynamic-form-input {
+  width: 50%;
+  margin-left: 390px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.dynamic-form {
+  display: flex;
+}
+
+.dynamic-form-delete {
+  color: red;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.dynamic-form-button {
+  width: 20%;
+  margin-left: 420px;
+}
+
+.dynamic-form-table {
+  width: 60%;
+  margin-top: 20px;
+  margin-left: 320px;
+}
+
+.validation-date-picker {
+  width: 100%;
+}
+
+.validation-agreement {
+  width: 1500px;
+  margin-left: 400px;
+}
+
+.validation-submit-button {
+  margin-left: 400px;
+  width: 220px;
+}
+
+.antdtable-edit {
+  color: green;
+}
+
+.antdtable-delete {
+  color: red;
+  margin-left: 12px;
+}
+
+.antd-table {
+  margin-left: 320px;
+  padding: "50px 220px";
+}
+
+.antdtable-button {
+  margin-left: 150px;
+  margin-bottom: 20px;
+}
+
+.steps {
+  padding: 100px 120px;
+  width: 1000px;
+}
+
+.multistep-button {
+  margin-left: 470px;
+}
+
+.multistep-finish {
+  margin-left: 410px;
+}
+
+/* Ag Grid Styling */
+
+.row-grouping {
+  height: 320px;
+  width: 800px;
+}
+
+.export-data {
+  width: 600px;
+  height: 200px;
+}
+
+.cell-renderer {
+  height: 500px;
+  width: 900px;
+}
+
+.ag-grid {
+  height: 500px;
+  width: 600px;
+}
+
+.ag-grid-menu {
+  display: flex;
+}
+
+/* Jest Counter Tester styling */
+
+.counter-tester {
+  text-align: center;
+}
+
+.counter-tester-buttons Button {
+  margin: 0 5px;
+}
+
+/* Table Search Component Styling */
+table {
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: rgb(199, 231, 248);
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+input {
+  width: 20%;
+  padding: 10px 15px;
+  margin: 8px 0;
+}
+
+.pagination {
+  display: flex;
+  margin-left: 180px;
+  list-style-type: none;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.table-search-flex {
   display: flex;
 }

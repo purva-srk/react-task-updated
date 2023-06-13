@@ -1,3 +1,5 @@
+import { Button } from "antd";
+
 import { useState } from "react";
 
 const CounterTesting = ({ initialCount }) => {
@@ -20,15 +22,23 @@ const CounterTesting = ({ initialCount }) => {
   };
 
   return (
-    <div>
+    <div className="counter-tester">
       <h1>
         Count:<h3 data-testid="count">{count}</h3>
       </h1>
-      <div>
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>Decrement</button>
-        <button onClick={restart}>Restart</button>
-        <button onClick={switchSigns}>Switch Signs</button>
+      <div className="counter-tester-buttons">
+        <Button type="primary" onClick={increment}>
+          Increment
+        </Button>
+        <Button type="primary" onClick={decrement}>
+          Decrement
+        </Button>
+        <Button type="primary" onClick={restart}>
+          Restart
+        </Button>
+        <Button type="primary" onClick={switchSigns}>
+          Switch Signs
+        </Button>
       </div>
     </div>
   );

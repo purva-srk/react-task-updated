@@ -1,5 +1,3 @@
-// import { Tabs, Tab } from "@material-ui/core";
-// import { Link } from "react-router-dom";
 import { Tabs } from "antd";
 import { BrowserRouter } from "react-router-dom";
 
@@ -15,25 +13,8 @@ import TableSearch from "./table_search/TableSearch";
 
 const Navbar = () => {
   const { TabPane } = Tabs;
-  // const routes = [
-  //   { label: "Toggle Button", path: "/toggle-button" },
-  //   { label: "Price Calculator", path: "/price-calculator" },
-  //   { label: "Temperature Converter", path: "/tempereture-converter" },
-  //   { label: "Counter Clone", path: "/counter-clone" },
-  // ];
   return (
     <div>
-      {/* <Tabs>
-        {routes.map((route) => (
-          <Tab
-            label={route.label}
-            value={route.path}
-            component={Link}
-            to={route.path}
-          />
-        ))}
-      </Tabs> */}
-
       <Tabs className="links" defaultActiveKey="tab1">
         <TabPane tab="Toggle Button" key="tab1">
           <ToggleButton />

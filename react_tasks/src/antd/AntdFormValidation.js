@@ -95,7 +95,7 @@ const AntdFormValidation = () => {
           hasFeedback
         >
           <DatePicker
-            style={{ width: "100%" }}
+            className="validation-date-picker"
             picker="date"
             placeholder="Choose your dob"
           />
@@ -117,7 +117,7 @@ const AntdFormValidation = () => {
 
         <Form.Item
           name="agreement"
-          style={{ width: 1500, marginLeft: 400 }}
+          className="validation-agreement"
           valuePropName="checked"
           rules={[
             {
@@ -138,7 +138,7 @@ const AntdFormValidation = () => {
 
         <Form.Item>
           <Button
-            style={{ marginLeft: 400, width: 220 }}
+            className="validation-submit-button"
             block
             type="primary"
             htmlType="submit"

@@ -2,45 +2,32 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
-import { useState, useEffect, useMemo } from "react";
-
-const CellRenderer = () => {
-  const [rowData, setRowData] = useState();
-  const [columnDefs, setColumnDefs] = useState([
-    { field: "athlete", rowGroup: true },
-    { field: "age" },
-    { field: "country", rowGroup: true },
-    { field: "year" },
-    { field: "date" },
-    { field: "sport" },
-    { field: "gold" },
-    { field: "silver" },
-    { field: "bronze" },
-    { field: "total" },
-  ]);
-  const defaultColDef = useMemo(
-    () => ({
-      resizable: true,
-    }),
-    []
-  );
-
-  useEffect(() => {
-    fetch("https://www.ag-grid.com/example-assets/olympic-winners.json")
-      .then((result) => result.json())
-      .then((rowData) => setRowData(rowData));
-  }, []);
+const RowGrouping = () => {
+  const rowData = [
+    { make: "Toyota", model: "Celica", price: 35000 },
+    { make: "Ford", model: "Mondeo", price: 32000 },
+    { make: "Porsche", model: "Boxter", price: 72000 },
+    { make: "Toyota", model: "Supra", price: 55000 },
+    { make: "Ford", model: "Mustang", price: 48000 },
+    { make: "Porsche", model: "Cayman", price: 66000 },
+  ];
+  const columnDefs = [
+    { field: "make", rowGroup: true },
+    { field: "model" },
+    { field: "price" },
+  ];
 
   return (
-    <div className="ag-theme-alpine" style={{ height: 500, width: 900 }}>
-      <AgGridReact
-        rowData={rowData}
-        columnDefs={columnDefs}
-        defaultColDef={defaultColDef}
-        animateRows={true}
-      />
+    <div className="ag-theme-alpine">
+      <div className="row-grouping">
+        <AgGridReact
+          rowData={rowData}
+          columnDefs={columnDefs}
+          autoGroupColumnDef={{ minWidth: 200 }}
+          animateRows={true}
+        />
+      </div>
     </div>
   );
 };
-
-export default CellRenderer;
+export default RowGrouping;

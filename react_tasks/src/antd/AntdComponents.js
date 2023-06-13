@@ -15,7 +15,7 @@ const AntdComponents = () => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <div className="antd-components">
       <Menu
         onClick={handleMenuClick}
         items={[

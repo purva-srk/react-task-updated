@@ -2,18 +2,11 @@ import { Upload, Button } from "antd";
 
 const AntdFileUpload = () => {
   return (
-    <div
-      style={{
-        justifyContent: "center",
-        alignItems: "center",
-        height: "80",
-        padding: "150px 350px",
-      }}
-    >
+    <div className="upload-file">
       <Upload.Dragger
         multiple={true}
         listType="picture"
-        style={{ width: 250 }}
+        className="upload-dragger"
         action={"http://localhost:3000/"}
         showUploadList={{ showRemoveIcon: "true" }}
         accept=".pdf,.png,.jpeg,.doc"

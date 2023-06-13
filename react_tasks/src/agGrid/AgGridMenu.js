@@ -13,7 +13,7 @@ const AgGridMenu = () => {
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className="ag-grid-menu">
       <Menu
         onClick={handleMenuClick}
         items={[

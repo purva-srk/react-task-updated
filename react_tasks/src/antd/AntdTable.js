@@ -57,13 +57,13 @@ const AntdTable = () => {
               onClick={() => {
                 handleEditEmployee(record);
               }}
-              style={{ color: "green" }}
+              className="antdtable-edit"
             />
             <DeleteOutlined
               onClick={() => {
                 handleDeleteEmployee(record);
               }}
-              style={{ color: "red", marginLeft: 12 }}
+              className="antdtable-delete"
             />
           </div>
         );
@@ -102,23 +102,20 @@ const AntdTable = () => {
   };
 
   return (
-    <div
-      style={{
-        width: "80%",
-        padding: "50px 220px",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="antd-table">
       <Button
         onClick={handleAddEmployee}
         type="primary"
         shape="round"
-        style={{ marginLeft: "270px", marginBottom: "20px" }}
+        className="antdtable-button"
       >
         Add new
       </Button>
-      <Table columns={columns} dataSource={dataSource}></Table>
+      <Table
+        pagination={{ pageSize: 5 }}
+        columns={columns}
+        dataSource={dataSource}
+      ></Table>
       <Modal
         title="Edit"
         visible={isEditing}

@@ -2,7 +2,7 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
 import { AgGridReact } from "ag-grid-react";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 
 const AgGrid = () => {
   const [rowData, setRowData] = useState([
@@ -11,11 +11,11 @@ const AgGrid = () => {
     { make: "Porsche", model: "Boxster", price: 72000 },
   ]);
 
-  const [columnDefs, setColumnDefs] = useState([
+  const columnDefs = [
     { field: "make" },
     { field: "model" },
     { field: "price" },
-  ]);
+  ];
 
   useEffect(() => {
     fetch("https://www.ag-grid.com/example-assets/row-data.json")
@@ -29,14 +29,18 @@ const AgGrid = () => {
   };
 
   return (
-    <div className="ag-theme-alpine" style={{ height: 500, width: 700 }}>
-      <AgGridReact
-        rowData={rowData}
-        columnDefs={columnDefs}
-        defaultColDef={defaultColDef}
-        rowSelection="multiple"
-        animateRows={true}
-      />
+    <div className="ag-theme-alpine">
+      <div className="ag-grid">
+        <AgGridReact
+          rowData={rowData}
+          columnDefs={columnDefs}
+          defaultColDef={defaultColDef}
+          rowSelection="multiple"
+          animateRows={true}
+          pagination={true}
+          paginationPageSize={10}
+        />
+      </div>
     </div>
   );
 };
