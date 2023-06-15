@@ -1,22 +1,25 @@
 import React, { useState } from "react";
-import { Table, Button, Input, Modal, Form } from "antd";
-import { DeleteOutlined } from "@ant-design/icons";
+import { Table, Button, Input, Modal } from "antd";
+import { DeleteOutlined, MinusCircleOutlined } from "@ant-design/icons";
 
 const AntdDynamicForm = () => {
-  const [isSubmit, setIsSubmit] = useState(false);
-  const [inputVisible, setInputVisible] = useState(true);
   const [data, setData] = useState([]);
   const [inputValues, setInputValues] = useState([]);
 
-  const handleInputChange = (index, event) => {
+  const handleInputChange = (index, field, value) => {
     const values = [...inputValues];
-    values[index] = event.target.value;
+    values[index][field] = value;
     setInputValues(values);
   };
 
   const handleAddField = () => {
-    setInputValues([...inputValues, ""]);
-    setInputVisible(true);
+    setInputValues([...inputValues, { name: "", age: "", email: "" }]);
+  };
+
+  const handleDeleteField = (index) => {
+    const values = [...inputValues];
+    values.splice(index, 1);
+    setInputValues(values);
   };
 
   const handleDeleteEmployee = (record) => {
@@ -32,12 +35,12 @@ const AntdDynamicForm = () => {
 
   const handleSubmit = () => {
     const newData = inputValues.map((value, index) => ({
-      id: index,
-      value: value,
+      id: index + 1,
+      name: value.name,
+      age: value.age,
+      email: value.email,
     }));
     setData(newData);
-    setIsSubmit(true);
-    setInputVisible(false);
   };
 
   const columns = [
@@ -47,9 +50,19 @@ const AntdDynamicForm = () => {
       key: "id",
     },
     {
-      title: "Value",
-      dataIndex: "value",
-      key: "value",
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Age",
+      dataIndex: "age",
+      key: "age",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
     },
     {
       title: "Action",
@@ -71,44 +84,64 @@ const AntdDynamicForm = () => {
 
   return (
     <div>
-      <div>
-        {inputVisible &&
-          inputValues.map((value, index) => (
-            <div className="dynamic-form">
-              <Input
-                className="dynamic-form-input"
-                key={index}
-                value={value}
-                onChange={(event) => handleInputChange(index, event)}
-              />
-              <br />
-            </div>
-          ))}
-        <br />
+      {inputValues.map((value, index) => (
+        <div className="dynamic-form">
+          <label className="dynamic-form-label">Employee{index + 1}-</label>
+          <Input
+            placeholder="Enter Name"
+            className="dynamic-form-input"
+            value={value.name}
+            onChange={(event) =>
+              handleInputChange(index, "name", event.target.value)
+            }
+          />
+          <Input
+            placeholder="Enter Age"
+            className="dynamic-form-input"
+            value={value.age}
+            onChange={(event) =>
+              handleInputChange(index, "age", event.target.value)
+            }
+          />
+          <Input
+            placeholder="Enter Email"
+            className="dynamic-form-input"
+            value={value.email}
+            onChange={(event) =>
+              handleInputChange(index, "email", event.target.value)
+            }
+          />
+          <MinusCircleOutlined
+            className="minus-outlined"
+            onClick={handleDeleteField}
+          />
+          <br />
+        </div>
+      ))}
+      <br />
+      <div className="form-buttons">
         <Button
           className="dynamic-form-button"
           type="primary"
           onClick={handleAddField}
         >
-          Add Field
+          Add Fields
+        </Button>
+
+        <Button
+          className="dynamic-form-button"
+          type="primary"
+          onClick={handleSubmit}
+        >
+          Submit Form
         </Button>
       </div>
-      <br />
-      <Button
-        className="dynamic-form-button"
-        type="primary"
-        onClick={handleSubmit}
-      >
-        Submit
-      </Button>
-      {isSubmit && (
-        <Table
-          className="dynamic-form-table"
-          pagination={{ pageSize: 5 }}
-          dataSource={data}
-          columns={columns}
-        />
-      )}
+      <Table
+        className="dynamic-form-table"
+        pagination={{ pageSize: 5 }}
+        dataSource={data}
+        columns={columns}
+      />
     </div>
   );
 };
