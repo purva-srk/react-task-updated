@@ -193,10 +193,14 @@ Button.clone {
 }
 
 .dynamic-form-input {
-  width: 50%;
-  margin-left: 390px;
+  width: 30%;
+  margin-left: 10px;
   padding: 5px;
   margin-bottom: 5px;
+}
+
+.dynamic-form-label {
+  margin-left: 200px;
 }
 
 .dynamic-form {
@@ -210,8 +214,19 @@ Button.clone {
 }
 
 .dynamic-form-button {
-  width: 20%;
-  margin-left: 420px;
+  width: 120px;
+  margin-left: 20px;
+}
+
+.form-buttons {
+  display: flex;
+  margin-left: 370px;
+}
+
+.minus-outlined {
+  color: red;
+  margin-top: 7px;
+  margin-left: 10px;
 }
 
 .dynamic-form-table {
@@ -335,21 +350,17 @@ input {
 }
 
 .pagination a {
+  border-radius: 8px;
   color: black;
   float: left;
   padding: 8px 16px;
   margin: 0 4px;
 }
 
-.pagination a.active {
-  background-color: #4caf50;
-  color: white;
-}
-
 .pagination a:hover:not(.active) {
   background-color: #ddd;
 }
 
-.table-search-flex {
-  display: flex;
+.active {
+  background-color: rgb(141, 214, 241);
 }
