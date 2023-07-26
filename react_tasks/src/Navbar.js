@@ -10,6 +10,8 @@ import AntdComponents from "./antd/AntdComponents";
 import AgGridMenu from "./agGrid/AgGridMenu";
 import CounterTesting from "./jest/CounterTesting";
 import TableSearch from "./table_search/TableSearch";
+import TodoRedux from "./todo_redux/TodoRedux";
+import ReduxCounter from "./redux_counter/ReduxCounter";
 
 const Navbar = () => {
   const { TabPane } = Tabs;
@@ -44,6 +46,12 @@ const Navbar = () => {
         </TabPane>
         <TabPane tab="Table Search" key="tab8">
           <TableSearch />
+        </TabPane>
+        {/* <TabPane tab="Todo List" key="tab9">
+          <TodoRedux />
+        </TabPane> */}
+        <TabPane tab="Redux Counter" key="tab9">
+          <ReduxCounter />
         </TabPane>
       </Tabs>
     </div>
